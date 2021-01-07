@@ -1,4 +1,5 @@
 {
   "name": "Home Assistant Add-on:  Bitwarden RS",
   "url": "https://github.com/davoloko/addon-bitwarden",
+  "maintainer": "David Diaz"
 }

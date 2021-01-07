@@ -27,7 +27,12 @@ RUN \
     \
     && apt-get install -y --no-install-recommends \
         nginx=1.14.2-2+deb10u3 \
-        libpq5 \
+        libssl-dev{{ package_arch_prefix }} \
+        libc6-dev{{ package_arch_prefix }} \
+        libpq5{{ package_arch_prefix }} \
+        libpq-dev \
+        libmariadb-dev{{ package_arch_prefix }} \
+        libmariadb-dev-compat{{ package_arch_prefix }}
     && apt-get clean \
     && rm -f -r \
         /etc/nginx \

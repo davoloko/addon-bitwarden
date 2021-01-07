@@ -23,14 +23,15 @@ COPY --from=bitwarden /web-vault /opt/web-vault
 # add Nginx
 # hadolint ignore=DL3009
 RUN \
-    apt-get update \
-    \
+    apt-get update
+RUN \
     && apt-get install -y --no-install-recommends \
-        nginx=1.14.2-2+deb10u1 \
+        nginx=1.14.2-2+deb10u1
+RUN \
     && apt-get clean \
     && rm -f -r \
-        /etc/nginx \
-    \
+        /etc/nginx
+RUN \
     && mkdir -p /var/log/nginx \
     && touch /var/log/nginx/error.log
 

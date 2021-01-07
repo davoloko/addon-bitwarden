@@ -27,23 +27,13 @@ RUN \
     \
     && apt-get install -y --no-install-recommends \
         nginx=1.14.2-2+deb10u3 \
+        libpq5 \
     && apt-get clean \
     && rm -f -r \
         /etc/nginx \
     \
     && mkdir -p /var/log/nginx \
     && touch /var/log/nginx/error.log
-
-RUN apt-get update && apt-get install -y \
-    --no-install-recommends \
-    openssl \
-    ca-certificates \
-    curl \
-    sqlite3 \
-    libmariadb-dev-compat \
-    libpq5 \
-    && rm -rf /var/lib/apt/lists/*
-
 # Copy root filesystem
 COPY rootfs /
 
